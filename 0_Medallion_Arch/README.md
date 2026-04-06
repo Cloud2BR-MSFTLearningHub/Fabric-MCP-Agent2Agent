@@ -3,7 +3,7 @@
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
 
 Last updated: 2025-09-11
 
@@ -50,7 +50,7 @@ Last updated: 2025-09-11
 > This demo will be created step by step. Please note that Microsoft Fabric already assists by setting up the medallion flow for you.
 
 > [!IMPORTANT]
-> If you are not able to see the `auto-create report` option neither `copilot` be aware you need to enable AI features in your tenant, click [here](https://github.com/brown9804/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/6_PBiCopilot.md#tenant-configuration) to see how.
+> If you are not able to see the `auto-create report` option neither `copilot` be aware you need to enable AI features in your tenant, click [here](https://github.com/Cloud2BR-MSFTLearningHub/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/6_PBiCopilot.md#tenant-configuration) to see how.
 
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/7eec0098-7b7b-453c-9dbb-ee1a6390577b">

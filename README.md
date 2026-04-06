@@ -3,7 +3,7 @@
 Costa Rica
 
 [![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[brown9804](https://github.com/brown9804)
+[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
 
 Last updated: 2025-10-15
 
@@ -138,7 +138,7 @@ From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamen
   <img width="650" alt="image" src="https://github.com/user-attachments/assets/2c4f94c6-de41-4b59-b812-0c122483ff53" />
 </p>
 
-Click [here to read more about Azure Databricks + Fabric](https://github.com/MicrosoftCloudEssentials-LearningHub/DemosScenarios-TechTalks/blob/main/0_Azure/2_AzureAnalytics/3_Databricks/1_demos/0_MedallionArch_Fabric%2BDatabricks/README.md) `better together`
+Click [here to read more about Azure Databricks + Fabric](https://github.com/Cloud2BR-MSFTLearningHub/DemosScenarios-TechTalks/blob/main/0_Azure/2_AzureAnalytics/3_Databricks/1_demos/0_MedallionArch_Fabric%2BDatabricks/README.md) `better together`
 
 ## Use Fabric Data Agent (Preferred for Semantic Models)
 
