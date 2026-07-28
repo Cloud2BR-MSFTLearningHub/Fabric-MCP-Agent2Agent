@@ -80,7 +80,10 @@ Implementing a medallion architecture provides several benefits:
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1831c97d-6b9a-4470-968d-e7803bc58b80">
 
-<img width="550" alt="Fabric Capacity assignment" src="https://github.com/user-attachments/assets/c524741c-be91-4fe4-82bc-c841fae8c6c9">
+<video controls width="550" aria-label="Fabric Capacity assignment walkthrough">
+   <source src="https://github.com/user-attachments/assets/c524741c-be91-4fe4-82bc-c841fae8c6c9" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 2. **Create Lakehouses**: Set up three lakehouses for the Bronze, Silver, and Gold layers.
 
@@ -92,7 +95,10 @@ Implementing a medallion architecture provides several benefits:
 
       <img width="958" alt="image" src="https://github.com/user-attachments/assets/828adf9d-8722-4bef-8694-8c22de330797">
 
-<img width="550" alt="Bronze, Silver, and Gold lakehouses" src="https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e">
+<video controls width="550" aria-label="Bronze, Silver, and Gold lakehouses walkthrough">
+   <source src="https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 ### Step 2: Ingest Data into the Bronze Layer
 1. **Identify Data Sources**:
@@ -113,7 +119,10 @@ You need to load the data as tables, either into a new table or an existing one.
 
 <img width="550" alt="Choose a new or existing table" src="https://github.com/user-attachments/assets/2b25d187-85e2-48e7-9a97-e7549f28ed9c">
 
-<img width="550" alt="Data loaded into a Bronze lakehouse table" src="https://github.com/user-attachments/assets/56308a58-cf72-4f0f-bf3e-e9e1669fa0df">
+<video controls width="550" aria-label="Data loaded into a Bronze lakehouse table walkthrough">
+   <source src="https://github.com/user-attachments/assets/56308a58-cf72-4f0f-bf3e-e9e1669fa0df" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 > Suppose you need to extract data from your `sql database`
 
@@ -142,7 +151,10 @@ VALUES
 (5, 'Sarah', 'Davis', '1995-09-30', '2020-11-20', 'Marketing Specialist', 60000.0000);
 ```
 
-<img width="550" alt="Sample SQL employee data" src="https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366">
+<video controls width="550" aria-label="Sample SQL employee data walkthrough">
+   <source src="https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 > **Important**
 > Besides using Data pipelines to bring your SQL information, you can also leverage Microsoft Fabric's mirrored SQL capability. This feature allows you to create a mirrored copy of your SQL database, improving data availability, reliability, and disaster recovery. By maintaining a synchronized copy of your database in a different location, it ensures that your data is always accessible, even in the event of a failure or outage.
@@ -153,7 +165,10 @@ VALUES
 > Under the Zero Trust Architecture, both inbound and outbound connections are treated with the same level of scrutiny and security protocols. This means that whether the connection is inbound or outbound, it is subject to strict verification processes to ensure it is safe and authorized. Key principles of Zero Trust include verification of every access request, least privilege access, continuous monitoring, and micro-segmentation. By applying these principles, Azure ensures that both inbound and outbound connections are secure, reducing the risk of unauthorized access and data breaches.
 
 
-<img width="550" alt="Microsoft Fabric mirrored SQL configuration" src="https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb">
+<video controls width="550" aria-label="Microsoft Fabric mirrored SQL configuration walkthrough">
+   <source src="https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb" type="video/mp4">
+   Your browser does not support the video tag.
+</video>
 
 2. **Create Dataflows or Pipelines**: Use Data Factory to create dataflows or pipelines that ingest data into the Bronze lakehouse.
    - In Data Factory, create a new pipeline.

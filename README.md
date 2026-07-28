@@ -156,7 +156,10 @@ E.g:
 1. Please ensure you read all the [prerequisites](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-data-agent#prerequisites)
 2. **Tenant switch enabled**: These features must be activated as mentioned here [prerequisites](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-data-agent#prerequisites)
  
-    <https://github.com/user-attachments/assets/f0df6fb9-e139-4c97-9b68-a6ea05eb6584>
+    <video controls width="550" aria-label="Fabric Data Agent tenant setting walkthrough">
+      <source src="https://github.com/user-attachments/assets/f0df6fb9-e139-4c97-9b68-a6ea05eb6584" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
 
 3. **F2 Fabric capacity or higher**: Ensure you have the appropriate Fabric capacity.
 4. **Workspace configured with Fabric Capacity**:
@@ -178,11 +181,17 @@ E.g:
 
 2. Choose the name for the Data agent instance:
    
-     <https://github.com/user-attachments/assets/752734e4-f7f6-44a3-8ccb-069ac005a410>
+     <video controls width="550" aria-label="Create a Fabric Data Agent walkthrough">
+       <source src="https://github.com/user-attachments/assets/752734e4-f7f6-44a3-8ccb-069ac005a410" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
 
 3. Add data:
    
-     <https://github.com/user-attachments/assets/9800e74e-cbca-45ff-a712-bb2e8a095bb5>
+     <video controls width="550" aria-label="Add data to a Fabric Data Agent walkthrough">
+       <source src="https://github.com/user-attachments/assets/9800e74e-cbca-45ff-a712-bb2e8a095bb5" type="video/mp4">
+       Your browser does not support the video tag.
+     </video>
 
 4. Relate tables, and start asking!
 
