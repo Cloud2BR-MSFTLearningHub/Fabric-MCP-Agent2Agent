@@ -292,10 +292,3 @@ gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").sa
         > Also, you can levarage AI capabilities with Copilot:
         
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/01cb521f-8529-4097-95bf-7c30a92fefd2">
-
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1383-limegreen" alt="Total views">
-  <p>Refresh Date: 2025-10-15</p>
-</div>
-<!-- END BADGE -->
