@@ -57,7 +57,7 @@ Implementing a medallion architecture provides several benefits:
 - **Simplicity**: It simplifies the data pipeline by breaking it down into smaller, manageable steps, each with a clear purpose.
 - **Auditability**: It provides a clear data lineage, making it easier to trace the origin of data and understand the transformations applied at each stage.
 
-    <img width="750" alt="image" src="https://github.com/user-attachments/assets/0630fb8c-29a5-499c-bfa9-f252af7debbc">
+<img width="750" alt="image" src="https://github.com/user-attachments/assets/0630fb8c-29a5-499c-bfa9-f252af7debbc">
 
 ### Step 1: Set Up Your Environment
 
@@ -80,7 +80,7 @@ Implementing a medallion architecture provides several benefits:
 
       <img width="550" alt="image" src="https://github.com/user-attachments/assets/1831c97d-6b9a-4470-968d-e7803bc58b80">
 
-https://github.com/user-attachments/assets/c524741c-be91-4fe4-82bc-c841fae8c6c9
+<img width="550" alt="Fabric Capacity assignment" src="https://github.com/user-attachments/assets/c524741c-be91-4fe4-82bc-c841fae8c6c9">
 
 2. **Create Lakehouses**: Set up three lakehouses for the Bronze, Silver, and Gold layers.
 
@@ -92,7 +92,7 @@ https://github.com/user-attachments/assets/c524741c-be91-4fe4-82bc-c841fae8c6c9
 
       <img width="958" alt="image" src="https://github.com/user-attachments/assets/828adf9d-8722-4bef-8694-8c22de330797">
 
-https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e
+<img width="550" alt="Bronze, Silver, and Gold lakehouses" src="https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e">
 
 ### Step 2: Ingest Data into the Bronze Layer
 1. **Identify Data Sources**:
@@ -101,15 +101,19 @@ https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e
 
    > Let's suppose you have your data locally as csv, you can upload your data to the raw layer. [Browse the sample files in the source repository](https://github.com/Cloud2BR-MSFTLearningHub/Fabric-MCP-Agent2Agent/tree/main/0_Medallion_Arch/sample_files) if you do not have data available.
         
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0ebd4ca9-80f6-4d1c-a28c-fc7ab6988538">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0ebd4ca9-80f6-4d1c-a28c-fc7ab6988538">
 
-     > You need to load the data as tables, either to a new table or to a existing one:
-     
-        |  Load information as table   |   To a new one or existing one | 
-        | --- | --- | 
-        |  <img width="550" alt="image" src="https://github.com/user-attachments/assets/09994e75-3029-4f61-aac8-b50f7c5fd2b1"> |  <img width="550" alt="image" src="https://github.com/user-attachments/assets/2b25d187-85e2-48e7-9a97-e7549f28ed9c"> | 
+You need to load the data as tables, either into a new table or an existing one.
 
-https://github.com/user-attachments/assets/56308a58-cf72-4f0f-bf3e-e9e1669fa0df
+**Load information as a table**
+
+<img width="550" alt="Load information as a table" src="https://github.com/user-attachments/assets/09994e75-3029-4f61-aac8-b50f7c5fd2b1">
+
+**Choose a new or existing table**
+
+<img width="550" alt="Choose a new or existing table" src="https://github.com/user-attachments/assets/2b25d187-85e2-48e7-9a97-e7549f28ed9c">
+
+<img width="550" alt="Data loaded into a Bronze lakehouse table" src="https://github.com/user-attachments/assets/56308a58-cf72-4f0f-bf3e-e9e1669fa0df">
 
 > Suppose you need to extract data from your `sql database`
 
@@ -138,7 +142,7 @@ VALUES
 (5, 'Sarah', 'Davis', '1995-09-30', '2020-11-20', 'Marketing Specialist', 60000.0000);
 ```
 
-https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366
+<img width="550" alt="Sample SQL employee data" src="https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366">
 
 > **Important**
 > Besides using Data pipelines to bring your SQL information, you can also leverage Microsoft Fabric's mirrored SQL capability. This feature allows you to create a mirrored copy of your SQL database, improving data availability, reliability, and disaster recovery. By maintaining a synchronized copy of your database in a different location, it ensures that your data is always accessible, even in the event of a failure or outage.
@@ -149,7 +153,7 @@ https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366
 > Under the Zero Trust Architecture, both inbound and outbound connections are treated with the same level of scrutiny and security protocols. This means that whether the connection is inbound or outbound, it is subject to strict verification processes to ensure it is safe and authorized. Key principles of Zero Trust include verification of every access request, least privilege access, continuous monitoring, and micro-segmentation. By applying these principles, Azure ensures that both inbound and outbound connections are secure, reducing the risk of unauthorized access and data breaches.
 
 
-https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb
+<img width="550" alt="Microsoft Fabric mirrored SQL configuration" src="https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb">
 
 2. **Create Dataflows or Pipelines**: Use Data Factory to create dataflows or pipelines that ingest data into the Bronze lakehouse.
    - In Data Factory, create a new pipeline.
@@ -158,27 +162,27 @@ https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb
        - Configure the source and destination settings in the pipeline activities.
        - Ensure the data is being ingested into the `raw_Bronze` lakehouse.
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/5b3169ec-7efe-4bfa-b38f-2820e9e7865e">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5b3169ec-7efe-4bfa-b38f-2820e9e7865e">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/b6d9623a-aaab-4351-ae79-d052267e5c0b">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/b6d9623a-aaab-4351-ae79-d052267e5c0b">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/0212202f-a0ff-4aa6-99df-06eeaf680191">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0212202f-a0ff-4aa6-99df-06eeaf680191">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/507ef21f-a8e1-4a8d-b433-cf5ff5ccd236">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/507ef21f-a8e1-4a8d-b433-cf5ff5ccd236">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/205f7928-e958-43f8-a0c3-131f2e8683ea">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/205f7928-e958-43f8-a0c3-131f2e8683ea">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/0c0bd512-f6f0-4a36-8d65-84aa93360873">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0c0bd512-f6f0-4a36-8d65-84aa93360873">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/dfc7c0bb-dc2d-4ca7-82a8-e6244a392f52">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/dfc7c0bb-dc2d-4ca7-82a8-e6244a392f52">
 
-            <img width="550" alt="image" src="https://github.com/user-attachments/assets/5e0ae097-e747-47a5-b0c3-e7408e90292a">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5e0ae097-e747-47a5-b0c3-e7408e90292a">
 
 ### Step 3: Transform Data in the Silver Layer
 1. **Create Notebooks or Dataflows**: Use Fabric's notebooks or dataflows to read data from the Bronze layer.
    - In the Fabric workspace, create a new notebook.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/0105a408-d680-4f3a-941a-6c867f37cb18">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/0105a408-d680-4f3a-941a-6c867f37cb18">
 
    - Connect the notebook to the `raw_Bronze` lakehouse.
 2. **Data Cleaning**: Apply data cleaning steps to handle missing values, remove duplicates, and correct data types.
@@ -190,23 +194,24 @@ https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb
 4. **Write to Silver Layer**: Write the cleaned and transformed data to the Silver lakehouse.
    - Use the `write.format("delta").save()` method to save the data to the `cleansed_Silver` lakehouse.
 
-      > **PySpark Code to Move Data from Bronze to Silver**:
-        ```python
-        # Read data from the Bronze layer
-        bronze_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-bronze-lakehousename>.Lakehouse/Tables/<table name>")
+**PySpark Code to Move Data from Bronze to Silver**:
 
-        # Perform transformations (if any)
-        silver_df = bronze_df  # Assuming no transformations for simplicity
-        
-        # Write data to the Silver layer
-        silver_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-lakehousename>.Lakehouse/Tables/<table_name>")
-        ```
-  
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/16181f57-67b6-4141-8259-cf2ca0fc072e">
-        
-        > If you want see more, click [here](./src/0_notebook_bronze_to_silver.ipynb) to see a sample of the notebook.
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/5affce77-ec21-4b03-881e-877ff2425b9d">
+```python
+# Read data from the Bronze layer
+bronze_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-bronze-lakehousename>.Lakehouse/Tables/<table name>")
+
+# Perform transformations (if any)
+silver_df = bronze_df  # Assuming no transformations for simplicity
+
+# Write data to the Silver layer
+silver_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-lakehousename>.Lakehouse/Tables/<table_name>")
+```
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/16181f57-67b6-4141-8259-cf2ca0fc072e">
+
+To see more, [view the Bronze-to-Silver sample notebook in the source repository](https://github.com/Cloud2BR-MSFTLearningHub/Fabric-MCP-Agent2Agent/blob/main/0_Medallion_Arch/src/0_notebook_bronze_to_silver.ipynb).
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/5affce77-ec21-4b03-881e-877ff2425b9d">
 
 ### Step 4: Curate Data in the Gold Layer
 1. **Read Data from Silver Layer**: Use notebooks or dataflows to read data from the Silver lakehouse.
@@ -261,34 +266,34 @@ gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").sa
 
    - Go to your gold layer.
         
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/8b4b7de1-fff4-4d1e-acda-15ef00aa88a2">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/8b4b7de1-fff4-4d1e-acda-15ef00aa88a2">
 
    - Create the semantic model:
         
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/91464446-262a-4dd1-9234-69cf7d889876">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/91464446-262a-4dd1-9234-69cf7d889876">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2cd16d3a-3ac8-4546-bb14-9d066cdabb62">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/2cd16d3a-3ac8-4546-bb14-9d066cdabb62">
 
 3. **Create Power BI Reports**: Use Power BI in Direct Lake Mode to create reports and dashboards from the data in the Gold layer.
    - Connect to the `curated_Gold` lakehouse using the SQL analytics endpoint.
    - Build reports and dashboards that provide insights into the data.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c0861bc6-bcdb-426a-95c6-c396078e19b3">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/c0861bc6-bcdb-426a-95c6-c396078e19b3">
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/c9c63d99-ae66-469d-8059-db687423adc8">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/c9c63d99-ae66-469d-8059-db687423adc8">
 
-        > Create new report:
+Create a new report:
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/1ae58ad5-8c91-452b-ad79-2e14e38c69a1">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/1ae58ad5-8c91-452b-ad79-2e14e38c69a1">
 
-        > If you click `auto-create report` Copilot will create a draft report for you:
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/2c3403ca-0cde-4008-a8c1-ae3c92f196e8">
+If you click `auto-create report`, Copilot will create a draft report for you:
 
-        > You can edit your report:
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/69ecd0e9-0a1a-42ac-b39c-23ec65257fa1">
-        
-        > Also, you can levarage AI capabilities with Copilot:
-        
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/01cb521f-8529-4097-95bf-7c30a92fefd2">
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/2c3403ca-0cde-4008-a8c1-ae3c92f196e8">
+
+You can edit your report:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/69ecd0e9-0a1a-42ac-b39c-23ec65257fa1">
+
+You can also leverage AI capabilities with Copilot:
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/01cb521f-8529-4097-95bf-7c30a92fefd2">

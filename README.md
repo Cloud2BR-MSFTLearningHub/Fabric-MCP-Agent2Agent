@@ -219,4 +219,7 @@ E.g:
 
 <img width="1870" height="814" alt="image" src="https://github.com/user-attachments/assets/568a6489-7939-4b31-aec1-d554689b73cc" />
 
-https://github.com/user-attachments/assets/bdb581c2-ccc9-48b1-a4ce-6b3c465f10bc
+<video controls width="550" aria-label="Fabric Data Agent connected to Copilot Studio">
+  <source src="https://github.com/user-attachments/assets/bdb581c2-ccc9-48b1-a4ce-6b3c465f10bc" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
