@@ -1,13 +1,4 @@
-# Troubleshooting: Known Errors 
-
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2025-09-30
-
-------------------------------------------
+# Troubleshooting: Known Errors
 
 ## Content 
 
@@ -40,18 +31,18 @@ At line:1 char:1
     <img width="990" alt="image" src="https://github.com/user-attachments/assets/98076919-f13a-4461-aa34-55a8bff3d1fc" />
 </p>
 
-
 ### Step 1: Download Terraform
 
-> By command line:
+#### Command line
+
 1. Open your command prompt.
-2. Use curl to download Terraform. Replace VERSION with the desired version number (e.g., 1.1.4):
-      
-      ```
-      curl -o terraform.zip https://releases.hashicorp.com/terraform/VERSION/terraform_VERSION_windows_amd64.zip
-      ```
-      
-     <img width="550" alt="image" src="https://github.com/user-attachments/assets/473128f5-f146-4933-8b50-4afa59613810" />
+2. Use curl to download Terraform. Replace VERSION with the desired version number, for example `1.1.4`.
+
+```sh
+curl -o terraform.zip https://releases.hashicorp.com/terraform/VERSION/terraform_VERSION_windows_amd64.zip
+```
+
+<img width="550" alt="Terraform download" src="https://github.com/user-attachments/assets/473128f5-f146-4933-8b50-4afa59613810" />
 
 3. Use tar to extract the ZIP file:
 
@@ -61,7 +52,7 @@ At line:1 char:1
 
       <img width="316" alt="image" src="https://github.com/user-attachments/assets/c81fb71b-e30b-431e-8974-306ebca51418" />
 
-> By GUI:
+#### Graphical interface
 1. Go to the [Terraform download page](https://developer.hashicorp.com/terraform/install).
 2. Download the appropriate package for your operating system (e.g., Windows, macOS, Linux).
 
@@ -172,11 +163,3 @@ Error: Failed to get existing workspaces: Error retrieving keys for Storage Acco
 <p align="center">
     <img width="990" alt="image" src="https://github.com/user-attachments/assets/6c392d1e-32c5-4929-aaf7-6cdb853cf77d" />
 </p>
-
-
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1383-limegreen" alt="Total views">
-  <p>Refresh Date: 2025-10-15</p>
-</div>
-<!-- END BADGE -->

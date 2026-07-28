@@ -1,15 +1,6 @@
-# Microsoft Fabric: Medallion Architecture  
+# Microsoft Fabric: Medallion Architecture
 
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2025-09-11
-
-------------------------------------------
-
-<details>
+<details markdown="1">
 <summary><b>List of References </b> (Click to expand)</summary>
 
 - [Fabric Draw.io icons](https://github.com/marclelijveld/Fabric-Icons/tree/main)
@@ -21,7 +12,7 @@ Last updated: 2025-09-11
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>Table of Contents</b> (Click to expand)</summary>
 
 - [Overview](#overview)
@@ -46,10 +37,10 @@ Last updated: 2025-09-11
 | **Silver Layer** | This layer contains cleaned and transformed data. The data in the Silver layer is often enriched with additional information and is structured in a way that makes it easier to query and analyze. This layer is also where data quality checks and transformations are applied. |
 | **Gold Layer** | This layer contains curated and aggregated data that is ready for consumption by business intelligence and reporting tools. The data in the Gold layer is highly structured and optimized for performance. |
 
-> [!NOTE]
+> **Note**
 > This demo will be created step by step. Please note that Microsoft Fabric already assists by setting up the medallion flow for you.
 
-> [!IMPORTANT]
+> **Important**
 > If you are not able to see the `auto-create report` option neither `copilot` be aware you need to enable AI features in your tenant, click [here](https://github.com/Cloud2BR-MSFTLearningHub/MicrosoftCloudEssentialsHub/blob/main/0_Azure/2_AzureAnalytics/0_Fabric/demos/6_PBiCopilot.md#tenant-configuration) to see how.
 
 
@@ -70,7 +61,7 @@ Implementing a medallion architecture provides several benefits:
 
 ### Step 1: Set Up Your Environment
 
-> [!NOTE]
+> **Note**
 > If you need more visual help, check out the video that walks you through the steps. Below is a detailed step-by-step guide.
 
 1. **Create a Fabric Workspace**: This will be your central hub for all activities.
@@ -108,7 +99,7 @@ https://github.com/user-attachments/assets/fdb64dd2-a6ec-4da0-a385-e55f875c8f8e
    - Determine the sources from which you'll ingest data.
    - List all the data sources such as databases, APIs, file systems, etc.
 
-     > Let's suppose you have your data locally as csv, you can upload your data to the raw layer. Click [to access sample files in case you don't have any data at the moment](./sample_files)
+   > Let's suppose you have your data locally as csv, you can upload your data to the raw layer. [Browse the sample files in the source repository](https://github.com/Cloud2BR-MSFTLearningHub/Fabric-MCP-Agent2Agent/tree/main/0_Medallion_Arch/sample_files) if you do not have data available.
         
         <img width="550" alt="image" src="https://github.com/user-attachments/assets/0ebd4ca9-80f6-4d1c-a28c-fc7ab6988538">
 
@@ -124,7 +115,7 @@ https://github.com/user-attachments/assets/56308a58-cf72-4f0f-bf3e-e9e1669fa0df
 
 <img width="550" alt="image" src="https://github.com/user-attachments/assets/1b186362-8041-4bd7-b797-ea2061d80b63">
 
-> [!NOTE]
+> **Note**
 > In case you don't have any data at the moment, please follow this video to create a sample:
 
 ```sql
@@ -149,10 +140,10 @@ VALUES
 
 https://github.com/user-attachments/assets/357184bf-cc49-4311-84d4-6369514b3366
 
-> [!IMPORTANT]
+> **Important**
 > Besides using Data pipelines to bring your SQL information, you can also leverage Microsoft Fabric's mirrored SQL capability. This feature allows you to create a mirrored copy of your SQL database, improving data availability, reliability, and disaster recovery. By maintaining a synchronized copy of your database in a different location, it ensures that your data is always accessible, even in the event of a failure or outage.
 
-> [!NOTE]
+> **Note**
 > `The mirroring process can involve both inbound and outbound connections`. Inbound connections refer to data coming into Azure from external sources, such as an on-premises SQL database being mirrored in Azure. Outbound connections, on the other hand, refer to data going out from Azure to external destinations, like mirroring an Azure SQL database to Microsoft Fabric. This setup allows for seamless data flow and integration across different platforms, ensuring data consistency and availability. <br/> <br/>
 > `For example, both Azure SQL Database and Microsoft Fabric are Microsoft products. However, the concept of outbound connections still applies because the data is moving from one service (Azure SQL Database) to another service (Microsoft Fabric), even though they are both within the Microsoft ecosystem. This movement of data is considered outbound because it is leaving the Azure SQL Database environment and entering the Microsoft Fabric environment`. <br/> <br/>
 > Under the Zero Trust Architecture, both inbound and outbound connections are treated with the same level of scrutiny and security protocols. This means that whether the connection is inbound or outbound, it is subject to strict verification processes to ensure it is safe and authorized. Key principles of Zero Trust include verification of every access request, least privilege access, continuous monitoring, and micro-segmentation. By applying these principles, Azure ensures that both inbound and outbound connections are secure, reducing the risk of unauthorized access and data breaches.
@@ -226,28 +217,30 @@ https://github.com/user-attachments/assets/2a64762a-f120-4448-b0fb-7a49f4d1bedb
 3. **Write to Gold Layer**: Write the curated data to the Gold lakehouse.
    - Use the `write.format("delta").save()` method to save the data to the `curated_Gold` lakehouse.
 
-        > Before any changes:
+> Before any changes:
 
-        <img width="170" alt="image" src="https://github.com/user-attachments/assets/759d1c7a-9d2d-404c-99e4-de068399ed4a">
+<img width="170" alt="image" src="https://github.com/user-attachments/assets/759d1c7a-9d2d-404c-99e4-de068399ed4a">
 
-        > Applying some transformations: If you want see more, click [here](./src/1_notebook_silver_to_gold.ipynb) to see a sample of the notebook.
+To see more, [view the Silver-to-Gold sample notebook in the source repository](https://github.com/Cloud2BR-MSFTLearningHub/Fabric-MCP-Agent2Agent/blob/main/0_Medallion_Arch/src/1_notebook_silver_to_gold.ipynb).
 
-        > **PySpark Code to Move Data from Silver to Gold**:
-        ```python
-        # Read data from the Silver layer
-        silver_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-lakehouse>.Lakehouse/Tables/<table name>")
-        
-        # Perform aggregations
-        gold_df = silver_df.groupBy("Name").agg(
-            sum("Count").alias("TotalCount"),
-            avg("price").alias("AveragePrice"),
-            avg("tax").alias("AverageTax")
-        )
-        
-        # Write data to the Gold layer
-        gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-gold-lakehouse name>.Lakehouse/Tables/<your table name>")
-        ```
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/d092d34f-86f5-4853-aea7-88ff4062f4af">
+**PySpark Code to Move Data from Silver to Gold**:
+
+```python
+# Read data from the Silver layer
+silver_df = spark.read.format("delta").load("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-silver-lakehouse>.Lakehouse/Tables/<table name>")
+
+# Perform aggregations
+gold_df = silver_df.groupBy("Name").agg(
+   sum("Count").alias("TotalCount"),
+   avg("price").alias("AveragePrice"),
+   avg("tax").alias("AverageTax")
+)
+
+# Write data to the Gold layer
+gold_df.write.mode("overwrite").option("mergeSchema", "true").format("delta").save("abfss://<your-container-name>@<your-storage-account-name>.dfs.core.windows.net/<your-gold-lakehouse name>.Lakehouse/Tables/<your table name>")
+```
+
+<img width="550" alt="image" src="https://github.com/user-attachments/assets/d092d34f-86f5-4853-aea7-88ff4062f4af">
 
 ### Step 5: Set Up Pipelines for Orchestration
 1. **Create Pipelines**: Create pipelines to automate the movement of data from the Bronze layer to the Silver layer, and from the Silver layer to the Gold layer.

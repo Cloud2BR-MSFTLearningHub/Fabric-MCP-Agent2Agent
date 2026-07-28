@@ -1,24 +1,15 @@
-# Terraform deployment of Azure resources needed for the workshop
-
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2025-09-30
-
-------------------------------------------
+# Terraform Deployment of Azure Resources for the Workshop
 
 > This repository contains Terraform configurations for setting up Microsoft Fabric Capacity and an SQL Server with a database on a public network, which are essential resources for this workshop.
 
-> [!TIP]
+> **Tip**
 > About Infrastructure via Terraform, Terraform is an infrastructure as code (IaC) tool that allows you to define and provision your infrastructure using a high-level configuration language. This approach enables source control of the infrastructure itself, allowing you to manage not only the solution code but also the connections and configurations. By using Terraform, you can ensure a consistent and reproducible environment for your deployments, automate infrastructure provisioning, and maintain version control over your infrastructure changes. `Also, Microsoft provides other IaC tools such as Bicep and ARM templates. Bicep is a domain-specific language that uses declarative syntax to deploy Azure resources, offering a concise and easy-to-read alternative to JSON-based ARM templates. ARM templates are JSON files that define the infrastructure and configuration for your Azure solution. These tools provide flexibility and options to suit different preferences and requirements for managing Azure resources.`
 
 <p align="center">
     <img width="550" alt="image" src="https://github.com/user-attachments/assets/3860deb8-17d2-48c4-bcd8-2bcd9c940e8c">
 </p>
 
-<details>
+<details markdown="1">
 <summary><b>List of References </b> (Click to expand)</summary>
 
 - [Standard Module Structure](https://developer.hashicorp.com/terraform/language/modules/develop/structure)
@@ -27,7 +18,7 @@ Last updated: 2025-09-30
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>Table of Content </b> (Click to expand)</summary>
 
 - [Overview](#overview)
@@ -86,64 +77,62 @@ graph TD;
     C -->|Order Now| E[terraform apply]
     C -->|Delete Resource if needed| F[terraform destroy]
 ```
-> [!IMPORTANT]
-> Please modify `terraform.tfvars` with your information, then run the following flow. If you need more visual guidance, please check the video that illustrates the provisioning steps. Be aware that the template uses an F64 Fabric capacity as SKU. Once deployed and activated, you can pause your capacity after you finish or delete the whole resource group after the workshop is completed.
+> **Important**
+> Modify `terraform.tfvars` with your information, then run the following flow. The template uses an F64 Fabric capacity SKU. After the workshop, pause the capacity or delete the resource group to control costs.
 
-https://github.com/user-attachments/assets/1ab31707-6f4c-4ec7-9e92-5d5cc96ac5bb
+### 1. Log in to Azure
 
-1. **Login to Azure**: This command logs you into your Azure account. It opens a browser window where you can enter your Azure credentials. Once logged in, you can manage your Azure resources from the command line.
+This command logs you into your Azure account. It opens a browser window where you can enter your Azure credentials. Once logged in, you can manage your Azure resources from the command line.
 
-    ```sh
-    cd ./Terraform-IaC/src/
-    ```
-    
-    ```sh
-    az login
-    ```
+```sh
+cd ./Terraform-IaC/src/
+az login
+```
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/b8dd07b5-074d-4f3a-b7e9-c1bcd3faedda" />
+<img width="550" alt="Azure CLI sign-in" src="https://github.com/user-attachments/assets/b8dd07b5-074d-4f3a-b7e9-c1bcd3faedda" />
 
-    <img width="550" alt="image" src="https://github.com/user-attachments/assets/9c2c3a4d-bd1c-4bbf-bd7d-1270f1df8946" />
+<img width="550" alt="Azure CLI authenticated" src="https://github.com/user-attachments/assets/9c2c3a4d-bd1c-4bbf-bd7d-1270f1df8946" />
 
-2. **Initialize Terraform**: Initializes the working directory containing the Terraform configuration files. It downloads the necessary provider plugins and sets up the backend for storing the state.
+### 2. Initialize Terraform
 
-    ``` sh
-    terraform init
-    ```
+Initialize the working directory containing the Terraform configuration files. This downloads the required provider plugins and sets up the state backend.
 
-   <img width="550" alt="image" src="https://github.com/user-attachments/assets/726c057a-ed81-4be7-a9ca-cc7c96dfa560" />
+```sh
+terraform init
+```
 
-3. **Terraform Provisioning Stage**: 
+<img width="550" alt="Terraform initialization" src="https://github.com/user-attachments/assets/726c057a-ed81-4be7-a9ca-cc7c96dfa560" />
 
-   - **Review**: Creates an execution plan, showing what actions Terraform will take to achieve the desired state defined in your configuration files. It uses the variable values specified in `terraform.tfvars`.
+### 3. Provision infrastructure
 
-        ```sh
-        terraform plan -var-file terraform.tfvars
-        ```
+#### Review the plan
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/1bf9b3cb-cdf7-4e10-8ed4-ec3b696d57db" />
+Create an execution plan that shows the changes Terraform will make using the values in `terraform.tfvars`.
 
-   - **Order Now**: Applies the changes required to reach the desired state of the configuration. It prompts for confirmation before making any changes. It also uses the variable values specified in `terraform.tfvars`.
+```sh
+terraform plan -var-file terraform.tfvars
+```
 
-        ```sh
-        terraform apply -var-file terraform.tfvars
-        ```
+<img width="550" alt="Terraform plan result" src="https://github.com/user-attachments/assets/1bf9b3cb-cdf7-4e10-8ed4-ec3b696d57db" />
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/942ce4a8-fce1-473d-a334-a4224c6a8952">
+#### Apply the configuration
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/7df28bd7-4ea4-49cf-bce1-7373ef6319aa">
-     
-   - **Remove**: Destroys the infrastructure managed by Terraform. It prompts for confirmation before deleting any resources. It also uses the variable values specified in `terraform.tfvars`.
-    
-        ```sh
-        terraform destroy -var-file terraform.tfvars
-        ```
+Apply the changes required to reach the configured state. Terraform prompts for confirmation before making changes and uses the values in `terraform.tfvars`.
 
-        <img width="550" alt="image" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104">
+```sh
+terraform apply -var-file terraform.tfvars
+```
 
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1383-limegreen" alt="Total views">
-  <p>Refresh Date: 2025-10-15</p>
-</div>
-<!-- END BADGE -->
+<img width="550" alt="Terraform apply confirmation" src="https://github.com/user-attachments/assets/942ce4a8-fce1-473d-a334-a4224c6a8952" />
+
+<img width="550" alt="Terraform apply result" src="https://github.com/user-attachments/assets/7df28bd7-4ea4-49cf-bce1-7373ef6319aa" />
+
+#### Remove the infrastructure
+
+Destroy the infrastructure managed by Terraform when it is no longer needed. Terraform prompts for confirmation and uses the values in `terraform.tfvars`.
+
+```sh
+terraform destroy -var-file terraform.tfvars
+```
+
+<img width="550" alt="Terraform destroy result" src="https://github.com/user-attachments/assets/f2089d03-3a3d-431d-b462-8148ef519104" />

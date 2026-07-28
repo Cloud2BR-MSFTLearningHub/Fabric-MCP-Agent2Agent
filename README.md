@@ -1,15 +1,6 @@
-# Demo: How to configure the Microsoft Fabric (Power BI) MCP connector in Copilot Studio 
+# Demo: Configure the Microsoft Fabric MCP Connector in Copilot Studio
 
-Costa Rica
-
-[![GitHub](https://img.shields.io/badge/--181717?logo=github&logoColor=ffffff)](https://github.com/)
-[Cloud2BR OSS - Learning Hub](https://github.com/Cloud2BR-MSFTLearningHub)
-
-Last updated: 2025-10-15
-
-----------
-
-<details>
+<details markdown="1">
 <summary><b>List of References</b> (Click to expand)</summary>
 
 - [Microsoft MCP Servers](https://github.com/microsoft/mcp) - Catalog of official Microsoft MCP (Model Context Protocol) server implementations for AI-powered data access and tool integration
@@ -32,7 +23,7 @@ Last updated: 2025-10-15
 
 </details>
 
-<details>
+<details markdown="1">
 <summary><b>Table of Content</b> (Click to expand)</summary>
 
 - [Prepare your data](#prepare-your-data)
@@ -61,7 +52,7 @@ flowchart LR
     D:::step
 ```
 
-<details>
+<details markdown="1">
 <summary><b> More details about it here </b> (Click to expand)</summary>
   
 > - We all `start with scripting`, no matter the language, it’s the first step. `Simple/complex instructions, written line by line`, to get something done
@@ -71,7 +62,7 @@ flowchart LR
 
 </details>
 
-<details> 
+<details markdown="1">
 <summary><b> Before Fabric</b> (Click to expand)</summary>
 
 <p float="left">
@@ -113,7 +104,7 @@ From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamen
 
 <img width="1141" height="668" alt="MCP-Fabric-Agent2Agent-CopilotStudio-data agent Fabric + AI Foundry drawio" src="https://github.com/user-attachments/assets/5742dc3a-427d-4ab5-862d-ba291a31fc35" />
 
-> [!NOTE]
+> **Note**
 > About the licensing: [Microsoft 365 Copilot Pricing – AI Agents | Copilot Studio](https://www.microsoft.com/en-us/microsoft-365-copilot/pricing/copilot-studio?msockid) <br/>
 > Copilot Credit consumption rates:
 > - Regular (non-generative AI) = 1 Copilot Credit; and
@@ -126,7 +117,7 @@ From [Microsoft Documentation](https://learn.microsoft.com/pt-br/fabric/fundamen
 
 ## Prepare your data
 
-> [Medallion Architecture](./0_Medallion_Arch/): Explore the structured approach to data management.
+> [Medallion Architecture](https://cloud2br-msftlearninghub.github.io/Fabric-MCP-Agent2Agent/medallion-architecture/): Explore the structured approach to data management.
 
  <div align="center">
    <img src="https://github.com/user-attachments/assets/2c5141ea-4f3a-4054-b8bd-313efde24ff0" alt="Centered Image" style="border: 2px solid #4CAF50; border-radius: 2px; padding: 2px; width: 900px; height: auto;"/>
@@ -159,7 +150,7 @@ E.g:
 
 <img width="1897" height="837" alt="image" src="https://github.com/user-attachments/assets/3e92d177-c0e6-456c-b965-980aff12a16d" />
 
-<details>
+<details markdown="1">
 <summary><b> Setup required</b> (Click to expand)</summary>
 
 1. Please ensure you read all the [prerequisites](https://learn.microsoft.com/en-us/fabric/data-science/how-to-create-data-agent#prerequisites)
@@ -178,7 +169,7 @@ E.g:
       
 </details>
 
-<details>
+<details markdown="1">
 <summary><b> How it works (Click to expand)</summary>
 
 1. Go to the `workspace`, click on `+ New item`, search for `Data agent`, and select it.
@@ -199,10 +190,10 @@ E.g:
 
 </details>
 
-> [!NOTE]
+> **Note**
 > Or use: MCP Server (For Custom Integrations) you create it and connect via Power Platform for example.
 
-<details>
+<details markdown="1">
 <summary><b> Examples of what to ask (Click to expand)</summary>
 
 | **Question**                                                                 | **Example of it looks**                                                                                       |
@@ -229,10 +220,3 @@ E.g:
 <img width="1870" height="814" alt="image" src="https://github.com/user-attachments/assets/568a6489-7939-4b31-aec1-d554689b73cc" />
 
 https://github.com/user-attachments/assets/bdb581c2-ccc9-48b1-a4ce-6b3c465f10bc
-
-<!-- START BADGE -->
-<div align="center">
-  <img src="https://img.shields.io/badge/Total%20views-1383-limegreen" alt="Total views">
-  <p>Refresh Date: 2025-10-15</p>
-</div>
-<!-- END BADGE -->
