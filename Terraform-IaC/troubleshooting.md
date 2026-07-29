@@ -82,11 +82,11 @@ curl -o terraform.zip https://releases.hashicorp.com/terraform/VERSION/terraform
       - Open the Start menu and search for `Environment Variables`.
       - Click on `Edit the system environment variables`
       
-          <img width="550" alt="image" src="https://github.com/user-attachments/assets/495b8e1a-ca79-4103-b743-ed35ad190bec" />
+<img width="550" alt="Edit the Terraform directory in Windows environment variables" src="https://github.com/user-attachments/assets/495b8e1a-ca79-4103-b743-ed35ad190bec" />
       
       - In the System Properties window, click on `Environment Variables`.
       
-           <img width="299" alt="image" src="https://github.com/user-attachments/assets/c5560100-5d3b-4461-a80d-eb1c1c2ede99" />
+<img width="299" alt="Windows Environment Variables dialog" src="https://github.com/user-attachments/assets/c5560100-5d3b-4461-a80d-eb1c1c2ede99" />
       
       - Under `System variables`, find the `Path` variable and click `Edit`.
       - Click `New` and add the path to the directory where you extracted Terraform (e.g., `C:\terraform`).

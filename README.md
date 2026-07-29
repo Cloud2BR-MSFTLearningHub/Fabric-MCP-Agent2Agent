@@ -44,12 +44,6 @@ flowchart LR
     %% Styling
     classDef step fill:#4a90e2,stroke:#333,stroke-width:2px,color:#fff,font-weight:bold;
     class A,B,C,D step;
-
-    %% Extra notes
-    A:::step
-    B:::step
-    C:::step
-    D:::step
 ```
 
 <details markdown="1">
